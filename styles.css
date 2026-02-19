@@ -1,0 +1,392 @@
+/* ============================================
+   Azima Islam Fariha - Portfolio
+   CV-inspired, professional design
+   ============================================ */
+
+:root {
+  --text-primary: #1a1a1a;
+  --text-secondary: #4a4a4a;
+  --text-muted: #6b6b6b;
+  --accent: #2c5f6f;
+  --accent-hover: #3d7a8c;
+  --bg: #faf9f7;
+  --bg-paper: #ffffff;
+  --border: #e0ddd8;
+  --max-width: 720px;
+  --font-serif: 'Cormorant Garamond', Georgia, serif;
+  --font-sans: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-sans);
+  color: var(--text-primary);
+  background: var(--bg);
+  line-height: 1.65;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+}
+
+.page {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 3rem 1.5rem 2rem;
+  background: var(--bg-paper);
+  box-shadow: 0 0 60px rgba(0, 0, 0, 0.06);
+  min-height: 100vh;
+}
+
+/* ============================================
+   Hero / Header
+   ============================================ */
+
+.hero {
+  margin-bottom: 3rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.hero-content {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.hero-portrait {
+  width: 140px;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 3px solid var(--accent);
+  flex-shrink: 0;
+}
+
+.hero-text {
+  flex: 1;
+  min-width: 0;
+}
+
+.hero h1 {
+  font-family: var(--font-serif);
+  font-size: 2.5rem;
+  font-weight: 600;
+  margin: 0 0 0.25rem 0;
+  letter-spacing: -0.02em;
+  color: var(--text-primary);
+}
+
+.subtitle {
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+  margin: 0 0 0.25rem 0;
+  font-weight: 500;
+}
+
+.hero .location {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  margin: 0 0 1.25rem 0;
+}
+
+.contact-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.5rem;
+}
+
+.contact-links a {
+  color: var(--accent);
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: color 0.2s ease;
+}
+
+.contact-links a:hover {
+  color: var(--accent-hover);
+  text-decoration: underline;
+}
+
+/* ============================================
+   Sections
+   ============================================ */
+
+.section {
+  margin: 2.5rem 0;
+}
+
+.section h2 {
+  font-family: var(--font-serif);
+  font-size: 1.15rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--text-primary);
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 0.5rem;
+  margin: 0 0 1.5rem 0;
+}
+
+/* ============================================
+   Experience / Jobs
+   ============================================ */
+
+.job {
+  margin-bottom: 2rem;
+}
+
+.job:last-child {
+  margin-bottom: 0;
+}
+
+.job-header {
+  margin-bottom: 0.75rem;
+}
+
+.job h3 {
+  font-family: var(--font-serif);
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin: 0 0 0.2rem 0;
+  color: var(--text-primary);
+}
+
+.job .company {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+.job .date {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin: 0.15rem 0 0 0;
+}
+
+.job-duties {
+  margin: 0 0 0.5rem 0;
+  padding-left: 1.25rem;
+}
+
+.job-duties li {
+  margin-bottom: 0.4rem;
+  color: var(--text-secondary);
+}
+
+.job-duties li:last-child {
+  margin-bottom: 0;
+}
+
+.highlight {
+  margin-top: 1rem;
+  padding: 1rem 1.25rem;
+  background: var(--bg);
+  border-left: 3px solid var(--accent);
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  border-radius: 0 4px 4px 0;
+}
+
+.highlight strong {
+  color: var(--text-primary);
+}
+
+/* ============================================
+   Skills
+   ============================================ */
+
+.skills-intro {
+  color: var(--text-secondary);
+  margin: 0 0 1.5rem 0;
+  font-size: 0.95rem;
+}
+
+.skills-grid {
+  display: grid;
+  gap: 1rem;
+}
+
+.skill-category {
+  padding: 1rem 1.25rem;
+  background: var(--bg);
+  border-radius: 4px;
+  border: 1px solid var(--border);
+}
+
+.skill-category h4 {
+  font-family: var(--font-serif);
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 0 0 0.4rem 0;
+  color: var(--text-primary);
+}
+
+.skill-category p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+}
+
+/* ============================================
+   Education
+   ============================================ */
+
+.education-item {
+  margin-bottom: 1.5rem;
+}
+
+.education-item:last-child {
+  margin-bottom: 0;
+}
+
+.education-item h3 {
+  font-family: var(--font-serif);
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin: 0 0 0.2rem 0;
+  color: var(--text-primary);
+}
+
+.education-item .institution {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+.education-item .date {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin: 0.15rem 0 0 0;
+}
+
+/* ============================================
+   Certifications
+   ============================================ */
+
+.cert-grid {
+  display: grid;
+  gap: 1rem;
+}
+
+.cert-category {
+  padding: 1rem 1.25rem;
+  background: var(--bg);
+  border-radius: 4px;
+  border: 1px solid var(--border);
+}
+
+.cert-category h4 {
+  font-family: var(--font-serif);
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 0 0 0.4rem 0;
+  color: var(--text-primary);
+}
+
+.cert-category p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+}
+
+/* ============================================
+   Languages
+   ============================================ */
+
+.languages-list {
+  font-size: 1rem;
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+/* ============================================
+   Footer
+   ============================================ */
+
+.footer {
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--border);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.footer p {
+  margin: 0;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.footer-links {
+  display: flex;
+  gap: 1rem;
+}
+
+.footer-links a {
+  color: var(--accent);
+  text-decoration: none;
+  font-size: 0.85rem;
+  transition: color 0.2s ease;
+}
+
+.footer-links a:hover {
+  color: var(--accent-hover);
+  text-decoration: underline;
+}
+
+/* ============================================
+   Responsive
+   ============================================ */
+
+@media (max-width: 600px) {
+  .page {
+    padding: 2rem 1rem 1.5rem;
+  }
+
+  .hero-content {
+    flex-direction: column;
+  }
+
+  .hero-portrait {
+    width: 120px;
+    height: 120px;
+  }
+
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  .contact-links {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .job h3,
+  .education-item h3 {
+    font-size: 1.05rem;
+  }
+
+  .section h2 {
+    font-size: 1rem;
+    letter-spacing: 0.08em;
+  }
+
+  .footer {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
