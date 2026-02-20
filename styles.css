@@ -1,20 +1,25 @@
 /* ============================================
    Azima Islam Fariha - Portfolio
-   CV-inspired, professional design
+   Reference design: two-column, clean
    ============================================ */
 
 :root {
   --text-primary: #1a1a1a;
-  --text-secondary: #4a4a4a;
-  --text-muted: #6b6b6b;
-  --accent: #2c5f6f;
-  --accent-hover: #3d7a8c;
-  --bg: #faf9f7;
-  --bg-paper: #ffffff;
-  --border: #e0ddd8;
-  --max-width: 720px;
-  --font-serif: 'Cormorant Garamond', Georgia, serif;
-  --font-sans: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  --text-secondary: #404040;
+  --text-muted: #5a5a5a;
+  --accent: #1E88E5;
+  --accent-hover: #1976D2;
+  --bg: #FFFFFF;
+  --bg-paper: #FFFFFF;
+  --bg-muted: #F5F5F5;
+  --border: #d4d4d4;
+  --sidebar-bg: #2d3748;
+  --sidebar-text: #e2e8f0;
+  --sidebar-text-muted: #a0aec0;
+  --sidebar-accent: #f6e05e;
+  --max-width: 1000px;
+  --sidebar-width: 280px;
+  --font-sans: 'Source Sans 3', -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
 *,
@@ -42,80 +47,108 @@ body {
 .page {
   max-width: var(--max-width);
   margin: 0 auto;
-  padding: 3rem 1.5rem 2rem;
+  padding: 2rem 1.5rem;
   background: var(--bg-paper);
-  box-shadow: 0 0 60px rgba(0, 0, 0, 0.06);
   min-height: 100vh;
 }
 
-/* ============================================
-   Hero / Header
-   ============================================ */
-
-.hero {
-  margin-bottom: 3rem;
-  padding-bottom: 2rem;
-  border-bottom: 1px solid var(--border);
+.page-inner {
+  display: flex;
+  gap: 3rem;
+  align-items: flex-start;
 }
 
-.hero-content {
+/* ============================================
+   Sidebar
+   ============================================ */
+
+.sidebar {
+  width: var(--sidebar-width);
+  flex-shrink: 0;
+  position: sticky;
+  top: 0;
+  align-self: flex-start;
   display: flex;
+  flex-direction: column;
   align-items: center;
-  gap: 2rem;
+  text-align: center;
+  background: var(--sidebar-bg);
+  padding: 2rem 1.5rem;
+}
+
+.sidebar .section {
+  text-align: left;
+  margin-top: 2rem;
+}
+
+.sidebar .section h2 {
+  color: var(--sidebar-accent);
+  border-bottom-color: rgba(255, 255, 255, 0.2);
+}
+
+.sidebar .about-intro {
+  color: var(--sidebar-text);
 }
 
 .hero-portrait {
-  width: 140px;
-  height: 140px;
+  width: 160px;
+  height: 160px;
   object-fit: cover;
   border-radius: 50%;
-  border: 3px solid var(--accent);
   flex-shrink: 0;
 }
 
-.hero-text {
+.sidebar h1 {
+  font-family: var(--font-sans);
+  font-size: 2rem;
+  font-weight: 700;
+  margin: 1rem 0 0.25rem 0;
+  color: #ffffff;
+}
+
+.sidebar .subtitle {
+  font-size: 1rem;
+  color: var(--sidebar-accent);
+  margin: 0 0 0.2rem 0;
+  font-weight: 500;
+}
+
+.sidebar .location {
+  font-size: 0.9rem;
+  color: var(--sidebar-text-muted);
+  margin: 0 0 1rem 0;
+}
+
+.sidebar .contact-links {
+  font-size: 0.9rem;
+}
+
+.sidebar .contact-links a {
+  color: var(--sidebar-text);
+  text-decoration: none;
+}
+
+.sidebar .contact-links a:hover {
+  color: var(--sidebar-accent);
+  text-decoration: underline;
+}
+
+.sidebar .contact-links .sep {
+  margin: 0 0.5rem;
+  color: var(--sidebar-text-muted);
+}
+
+/* ============================================
+   Main Content
+   ============================================ */
+
+.main-content {
   flex: 1;
   min-width: 0;
 }
 
-.hero h1 {
-  font-family: var(--font-serif);
-  font-size: 2.5rem;
-  font-weight: 600;
-  margin: 0 0 0.25rem 0;
-  letter-spacing: -0.02em;
-  color: var(--text-primary);
-}
-
-.subtitle {
-  font-size: 1.1rem;
-  color: var(--text-secondary);
-  margin: 0 0 0.25rem 0;
-  font-weight: 500;
-}
-
-.hero .location {
-  font-size: 0.9rem;
-  color: var(--text-muted);
-  margin: 0 0 1.25rem 0;
-}
-
-.contact-links {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem 1.5rem;
-}
-
-.contact-links a {
-  color: var(--accent);
-  text-decoration: none;
-  font-size: 0.9rem;
-  transition: color 0.2s ease;
-}
-
-.contact-links a:hover {
-  color: var(--accent-hover);
-  text-decoration: underline;
+.main-content > .section:first-child {
+  margin-top: 0;
 }
 
 /* ============================================
@@ -126,16 +159,29 @@ body {
   margin: 2.5rem 0;
 }
 
+.section:first-child {
+  margin-top: 0;
+}
+
 .section h2 {
-  font-family: var(--font-serif);
-  font-size: 1.15rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.12em;
+  font-family: var(--font-sans);
+  font-size: 1.2rem;
+  font-weight: 700;
   color: var(--text-primary);
   border-bottom: 1px solid var(--border);
   padding-bottom: 0.5rem;
   margin: 0 0 1.5rem 0;
+}
+
+/* ============================================
+   About Me
+   ============================================ */
+
+.about-intro {
+  color: var(--text-secondary);
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.7;
 }
 
 /* ============================================
@@ -155,9 +201,9 @@ body {
 }
 
 .job h3 {
-  font-family: var(--font-serif);
-  font-size: 1.2rem;
-  font-weight: 600;
+  font-family: var(--font-sans);
+  font-size: 1.15rem;
+  font-weight: 700;
   margin: 0 0 0.2rem 0;
   color: var(--text-primary);
 }
@@ -191,11 +237,10 @@ body {
 .highlight {
   margin-top: 1rem;
   padding: 1rem 1.25rem;
-  background: var(--bg);
+  background: var(--bg-muted);
   border-left: 3px solid var(--accent);
   font-size: 0.9rem;
   color: var(--text-secondary);
-  border-radius: 0 4px 4px 0;
 }
 
 .highlight strong {
@@ -206,12 +251,6 @@ body {
    Skills
    ============================================ */
 
-.skills-intro {
-  color: var(--text-secondary);
-  margin: 0 0 1.5rem 0;
-  font-size: 0.95rem;
-}
-
 .skills-grid {
   display: grid;
   gap: 1rem;
@@ -219,15 +258,14 @@ body {
 
 .skill-category {
   padding: 1rem 1.25rem;
-  background: var(--bg);
-  border-radius: 4px;
+  background: var(--bg-muted);
   border: 1px solid var(--border);
 }
 
 .skill-category h4 {
-  font-family: var(--font-serif);
+  font-family: var(--font-sans);
   font-size: 1rem;
-  font-weight: 600;
+  font-weight: 700;
   margin: 0 0 0.4rem 0;
   color: var(--text-primary);
 }
@@ -251,9 +289,9 @@ body {
 }
 
 .education-item h3 {
-  font-family: var(--font-serif);
-  font-size: 1.1rem;
-  font-weight: 600;
+  font-family: var(--font-sans);
+  font-size: 1.05rem;
+  font-weight: 700;
   margin: 0 0 0.2rem 0;
   color: var(--text-primary);
 }
@@ -281,15 +319,14 @@ body {
 
 .cert-category {
   padding: 1rem 1.25rem;
-  background: var(--bg);
-  border-radius: 4px;
+  background: var(--bg-muted);
   border: 1px solid var(--border);
 }
 
 .cert-category h4 {
-  font-family: var(--font-serif);
+  font-family: var(--font-sans);
   font-size: 1rem;
-  font-weight: 600;
+  font-weight: 700;
   margin: 0 0 0.4rem 0;
   color: var(--text-primary);
 }
@@ -332,47 +369,62 @@ body {
 }
 
 .footer-links {
-  display: flex;
-  gap: 1rem;
+  font-size: 0.85rem;
 }
 
 .footer-links a {
   color: var(--accent);
   text-decoration: none;
-  font-size: 0.85rem;
-  transition: color 0.2s ease;
 }
 
 .footer-links a:hover {
-  color: var(--accent-hover);
+  color: var(--accent);
   text-decoration: underline;
+}
+
+.footer-links .sep {
+  margin: 0 0.5rem;
+  color: var(--text-muted);
 }
 
 /* ============================================
    Responsive
    ============================================ */
 
-@media (max-width: 600px) {
+@media (max-width: 768px) {
+  .page-inner {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .sidebar {
+    width: 100%;
+    position: static;
+    align-items: center;
+    text-align: center;
+  }
+
+  .sidebar .section {
+    text-align: left;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .main-content .section:first-child {
+    margin-top: 0;
+  }
+
   .page {
     padding: 2rem 1rem 1.5rem;
   }
 
-  .hero-content {
-    flex-direction: column;
-  }
-
   .hero-portrait {
-    width: 120px;
-    height: 120px;
+    width: 140px;
+    height: 140px;
   }
 
-  .hero h1 {
-    font-size: 2rem;
-  }
-
-  .contact-links {
-    flex-direction: column;
-    gap: 0.5rem;
+  .sidebar h1 {
+    font-size: 1.75rem;
   }
 
   .job h3,
@@ -380,13 +432,9 @@ body {
     font-size: 1.05rem;
   }
 
-  .section h2 {
-    font-size: 1rem;
-    letter-spacing: 0.08em;
-  }
-
   .footer {
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
+    text-align: center;
   }
 }
